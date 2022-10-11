@@ -1,0 +1,41 @@
+#include <stdio.h>
+ void bubble_sort(int a[],int n)
+{
+     int t=0;
+int flag=1;
+     for(int i=0;i<n && flag=1;i++)
+     {
+          for(int j=0;j<n-i;j++)
+          {
+               if(a[j]>a[j+1])
+               {
+                    t=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=t;
+                   flag =1;
+               }
+else
+flag=0;
+               
+          }
+     }
+      for(int k=1;k<=n;k++)
+     {
+     printf("%d",a[k]);
+     }
+}
+void main()
+{ 
+     int i,j;
+     int a[10],n;
+     int m=0,t=0;
+     printf("Enter the number of elements :");
+     scanf("%d",&n);
+     printf("Enter the elemnts of array:");
+     for(i=0;i<n;i++)
+     {
+        scanf("%d",&a[i]);
+     }
+     bubble_sort(a,n);
+}    
+   

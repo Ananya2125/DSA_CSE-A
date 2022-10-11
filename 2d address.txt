@@ -1,0 +1,29 @@
+#include<stdio.h>
+//2D address calculation using row major technique
+int main()
+{
+      int a[10][10];
+      int i,j,r,c,x,y;
+      long base;
+      printf("enter the numbetr of rows and columns :");
+      scanf("%d%d",&r,&c);
+      printf("enter the elements of the 2-d array:");
+      for(i=0;i<r;i++)
+      {
+            for(j=0;j<c;j++)
+            {
+                  scanf("%d",&a[i][j]);
+            }
+      }
+      printf("enter the position of the element ,of which the address is to be checked:");
+      scanf("%d%d",&x,&y);
+      printf("enter base address:");
+      scanf("%ld",&base);
+      int l1=0;
+      int u2=c-1;
+      int l2=0;
+      int n=sizeof(int);
+      printf("size %d",n);
+      long address=base+((((x-l1)*(u2-l2+1))+(y-l2))*n);
+      printf("address = %ld",address);
+}

@@ -1,0 +1,35 @@
+#include<stdio.h>
+//2D address calculation using column major technique
+int main()
+{
+      int m[10][10][10];
+      int i,j,k,a,b,c,x,y,z;
+      long base;
+      printf("enter the numbetr of dimensions of the 3-d matrix:");
+      scanf("%d%d%d",&a,&b,&c);
+      printf("enter the elements of the 2-d array:");
+      for(i=0;i<a;i++)
+      {
+            for(j=0;j<b;j++)
+            {
+                  for(int k=0;k<c;k++)
+                  {
+                      scanf("%d",&m[i][j][k]);
+                  }
+            }
+      }
+      printf("enter the position of the element ,of which the address is to be checked:");
+      scanf("%d%d%d",&x,&y,&z);
+      printf("enter base address:");
+      scanf("%ld",&base);
+      int l1=0;
+      int l2=0;
+      int l3=0;
+      int u1=a-1;
+      int u3=c-1;
+      int n=sizeof(int);
+      int p=(((y-l2)*(u1-l1+1)*(u3-l3+1)));
+      int q=((z-l3)*(u3-l3+1));
+      long address=base+((p+q+(x-l1))*n);
+      printf("address = %ld",address);
+}

@@ -1,0 +1,75 @@
+#include<stdio.h>
+void main()
+{
+      int m,n,a[10][10];
+      printf("enter the rows and columns of matrix I :");
+      scanf("%d%d",&m,&n);
+      printf("enter the elements of the array:");
+      for(int i=0;i<m;i++)
+      {
+            for(int j=0;j<n;j++)
+            {
+                  scanf("%d",&a[i][j]);
+            }
+      }
+      int p,q,b[10][10];
+      printf("enter the rows and columns of matrix II :");
+      scanf("%d%d",&p,&q);
+      printf("enter the elements of the array:");
+      for(int i=0;i<p;i++)
+      {
+            for(int j=0;j<q;j++)
+            {
+                  scanf("%d",&b[i][j]);
+            }
+      }
+      printf("entered array I: \n");
+      for(int i=0;i<m;i++)
+      {
+            for(int j=0;j<n;j++)
+            {
+                  printf("%d\t",a[i][j]);
+            }
+            printf("\n");
+      }
+      printf("entered array II: \n");
+      for(int i=0;i<p;i++)
+      {
+            for(int j=0;j<p;j++)
+            {
+                  printf("%d\t",b[i][j]);
+            }
+            printf("\n");
+      }
+      
+      if(n!=p)
+      {
+            printf("entered matrices cannot be multiplied.");
+      }
+      else
+      {
+            int res[10][10];
+            printf("multiplied matrix :\n");
+            for(int i=0;i<m;i++)
+            {
+                  for(int j=0;j<q;j++)
+                  {
+                       res[i][j]=0;
+                        for(int k=0;k<n;k++)
+                        {
+                              res[i][j]+=a[i][k]*b[k][j];
+                        }
+                  }
+            }
+                  for(int i=0;i<p;i++)
+                  {
+                        for(int j=0;j<n;j++)
+                        {
+                              printf("%d\t",res[i][j]);
+                        }
+                        printf("\n");
+                  }
+            
+      }
+      
+}

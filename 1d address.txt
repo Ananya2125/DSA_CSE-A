@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+int a[10], n,base, x,address;
+printf("Enter number of elements \n");
+scanf("%d", &n);
+printf("Enter %d Number \n", n);
+for (int i = 0; i < n; i++)
+scanf("%d", &a[i]);
+printf("enter the position ,where you want to find the address:");
+scanf("%d",&x);
+printf("enter the base address :");
+scanf("%d",&base);
+
+address= base+ ((x-1)*n);
+printf("%d",address );
+}
